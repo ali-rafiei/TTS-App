@@ -28,7 +28,7 @@ pip3 install --upgrade setuptools
 pip3 install pytesseract
 pip3 install tesseract
 pip3 install pillow
-pip install pyttsx3
+pip3 install pyttsx3
 ```
 > If you get installation errors , make sure you first upgrade your wheel version using :  
 `pip install --upgrade wheel`
