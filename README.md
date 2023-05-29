@@ -1,6 +1,6 @@
 # Text to Speech Application in Python
 
-Easy to use GUI for both Text to Speech and Image to Text functionality in Python. 
+Easy to use GUI for both text to speech and image to text functionality in python. 
 
 ***Features Include:***
 - Fully **OFFLINE** text to speech conversion
