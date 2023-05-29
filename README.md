@@ -4,10 +4,10 @@ Easy to use GUI for both Text to Speech and Image to Text functionality in Pytho
 
 ***Features Include:***
 - Fully **OFFLINE** text to speech conversion
-- Image to Text conversion
+- Image to text conversion
 - Save speech audio as a file
-- Text Editor
-- Opening and Saving text files
+- Text editor
+- Opening and saving text files
 - Mutilple voice selections
 - Control speed/rate of speech
 
