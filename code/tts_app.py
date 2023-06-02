@@ -3,6 +3,7 @@ from tkinter.filedialog import askopenfilename, asksaveasfilename
 from PIL import Image   # Image component
 import pytesseract      # Convert Image to Text Component
 from subprocess import call     # To prevent window from closing when using TTS
+import pyttsx3           # Text to Speech Component
 
 
 def open_file():
@@ -78,13 +79,14 @@ def get_voice_spr():
     voiceSpr = voicescalespr.get()
     return voiceSpr
 
+engine = pyttsx3.init()
+voices = engine.getProperty('voices')
 
 window = tk.Tk()
 window.title("Text to Speech App")
 
 window.rowconfigure(0, minsize=800, weight=1)
 window.columnconfigure(1, minsize=800, weight=1)
-
 
 txt_edit = tk.Text(window)
 frm_buttons = tk.Frame(window, relief=tk.RAISED, bd=2)
@@ -94,7 +96,8 @@ btn_save = tk.Button(frm_buttons, text="Save as Text File", command=save_file)
 btn_tts = tk.Button(frm_buttons, text="Text to Speech", command=text_to_speech)
 btn_mp3 = tk.Button(frm_buttons, text="Save TTS as MP3", command=save_mp3)
 label_voiceStr = tk.Label(frm_buttons, text="Voice Selection")
-voicescale = tk.Scale(frm_buttons, orient='horizontal', from_=0, to=5)   # how many voices there are in speak.py
+voicescale = tk.Scale(frm_buttons, orient='horizontal', from_=0, to=len(voices)-1)   # how many voices there are in speak.py
+#voicescale = tk.Scale(frm_buttons, orient='horizontal', from_=0, to=5)  # comment out line above and uncomment this line to limit voice selection (make sure to do the same in speak.py)
 label_voicespr = tk.Label(frm_buttons, text="Voice Speed")
 voicescalespr = tk.Scale(frm_buttons, orient='horizontal', from_=-50, to=50)   # Speed rate of voice
 voicescalespr.set(0)
